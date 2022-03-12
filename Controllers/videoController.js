@@ -7,7 +7,7 @@ const getAll = (req, res) => {
         const newVideo = {};
 
         newVideo.id = video.id;
-        newVideo.title = tree.title;
+        newVideo.title = video.title;
 
         return newVideo
     });
@@ -35,7 +35,7 @@ const createOne = (req, res) => {
         return res.status(400).send("Please include a description");
     }
 
-    const newVideo = videoModel.creatOne({
+    const newVideo = videoModel.createOne({
         title: req.body.title,
         descirption: req.body.description
     });
