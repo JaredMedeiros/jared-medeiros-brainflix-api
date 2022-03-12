@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app,use(express.static('./public'))
+app.use(express.static('./public'))
 
 app.use((req, res, next) => {
     console.log(`Incoming request for path ${req.path}`);
