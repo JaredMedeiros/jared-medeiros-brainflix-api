@@ -4,7 +4,7 @@ const getAll = (req, res) => {
     const videoData = videoModel.getAll();
 
     const strippedData = videoData.map((video) => {
-        // const newVideo = {};
+        
         return {
             id : video.id,
             title: video.title,
