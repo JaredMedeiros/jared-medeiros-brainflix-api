@@ -25,28 +25,19 @@ const getById = (id) => {
 
 const createOne = ({ title, description }) => {
     const videoData = readVideos();
-    const videoPhoto = './public/images/upload-video-preview.jpg'
 
     const newVideo = {
         id: uniqid(),
         title,
         channel: "My Channel",
-        image: videoPhoto,
+        image: 'http://localhost:5500/images/Upload-video-preview.jpg',
         description,
-        views: "2,343,243",
-        likes: "2",
+        views: "0",
+        likes: "0",
         duration: "2:02",
         video: "https://project-2-api.herokuapp.com/stream",
         timestamp: new Date().getTime(),
-        comments: [
-            {
-                name: "Jared Medeiros",
-                comment: "Pretty good video",
-                id: uniqid(),
-                likes: 0,
-                timestamp: new Date().getTime(),
-            },
-        ],
+        comments: [],
     };
 
     videoData.push(newVideo);

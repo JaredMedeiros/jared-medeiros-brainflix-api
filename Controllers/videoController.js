@@ -4,12 +4,14 @@ const getAll = (req, res) => {
     const videoData = videoModel.getAll();
 
     const strippedData = videoData.map((video) => {
-        const newVideo = {};
+        // const newVideo = {};
+        return {
+            id : video.id,
+            title: video.title,
+            channel: video.channel,
+            image: video.image
+        }
 
-        newVideo.id = video.id;
-        newVideo.title = video.title;
-
-        return newVideo
     });
 
     res.json(strippedData);
